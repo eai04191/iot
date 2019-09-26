@@ -1,0 +1,45 @@
+h1, .uk-card-title, .numeric, #date {
+  font-family: 'Roboto', ProximaNova, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "新ゴ L", sans-serif;
+  font-weight: 400;
+}
+.numeric {
+  display: inline-block;
+  font-weight: 100;
+}
+
+.uk-card {
+  overflow: hidden;
+  line-height: 1;
+}
+.uk-card .fa {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 7rem;
+  color: rgba(1,1,1,.25);
+}
+.uk-card span {
+    font-size: 5rem;
+}
+.uk-card p {
+    position: relative;
+    z-index: 2;
+}
+#wbgt_txt {
+  display: none;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.stamp {
+  font-size: 3rem;
+  border-style: solid;
+  border-width: medium;
+  border-color: red;
+  border-radius: 1rem;
+  padding: .5rem;
+}
+
+.uk-icon .fa {
+  font-size: 20px;
+}

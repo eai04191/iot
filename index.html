@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>ワイの部屋の状態</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.37/css/uikit.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,400&effect=fire-animation" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="uk-section uk-padding-remove-bottom">
+      <div class="uk-container uk-container-small">
+        <div uk-grid>
+          <div class="uk-width-expand@m uk-margin-auto-vertical">
+            <h1 class="uk-heading-line"><span><i class="fa fa-home" aria-hidden="true"></i>部屋の状態</span></h1>
+          </div>
+          <div class="uk-width-auto@m">
+            <div id="date" class="uk-card uk-card-default uk-card-body"></div>
+          </div>
+        </div>
+        <div class="uk-child-width-1-3@s uk-grid-match" uk-grid>
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+              <h3 class="uk-card-title">室温</h3>
+              <p><span id="temperature" class="numeric"></span>°C</p>
+              <i class="fa fa-thermometer-half" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+              <h3 class="uk-card-title">湿度</h3>
+              <p><span id="humidity" class="numeric"></span>％</p>
+              <i class="fa fa-tint" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+              <h3 class="uk-card-title">不快指数</h3>
+              <p><span id="discomfort" class="numeric"></span></p>
+              <i id="discomfort_icon" class="fa fa-meh-o" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body ">
+              <h3 class="uk-card-title">WBGT</h3>
+              <p><span id="wbgt" class="numeric"></span><span id="wbgt_txt" class="uk-align-right uk-margin-remove stamp"></span>°C</p>
+              <i id="wbgt_icon" class="fa fa-medkit" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+              <h3 class="uk-card-title">気圧</h3>
+              <p><span id="pressure" class="numeric"></span>hPa</p>
+              <i class="fa fa-cloud" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="uk-section uk-padding-remove-bottom">
+      <div class="uk-container uk-container-small uk-text-center">
+        <hr class="uk-margin-remove-bottom">
+        <div class="uk-margin-top uk-margin-bottom">
+          <div class="uk-child-width-auto@m uk-flex-middle uk-grid" uk-grid>
+            <div class="uk-margin-auto">
+              <ul class="uk-subnav uk-flex-center">
+                <li><a href="#modal-about" uk-toggle>About</a></li>
+                <li><a href="#modal-config" uk-toggle>Config</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="uk-text-right@m uk-text-center">
+                <div class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid" uk-grid>
+                  <div>
+                    <a href="https://github.com/eai04191" class="uk-icon-link uk-icon">
+                      <i class="fa fa-github" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="https://twitter.com/eai04191" class="uk-icon-link uk-icon">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal-about" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+            <h2 class="uk-modal-title">About</h2>
+            <p>@eai04191の部屋の温度を取得するだけのサイトです。</p>
+            <p>部屋にエアコンはありません。</p>
+            <h3>使用した物たち</h3>
+            <h4>フロントエンド</h4>
+            <ul>
+              <li><a href="https://getuikit.com/">UIKit</a></li>
+              <li><a href="https://jquery.com/">jQuery</a></li>
+              <li><a href="http://fontawesome.io/">Font Awesome</a></li>
+              <li><a href="https://fonts.google.com/">Google Fonts</a></li>
+              <li><a href="https://momentjs.com/">Moment.js</a></li>
+              <li><a href="https://daneden.github.io/animate.css/">Animate.css</a></li>
+            </ul>
+            <h4>バックエンド</h4>
+            <ul>
+              <li><a href="https://nodejs.org/en/">Node.js</a></li>
+              <li><a href="https://www.python.org/">Python</a></li>
+              <li><a href="https://mackerel.io/">mackerel</a></li>
+            </ul>
+            <h4>ハードウェア</h4>
+            <ul>
+              <li><a href="https://www.raspberrypi.org/">Raspberry Pi Type B</a></li>
+              <li><a href="http://akizukidenshi.com/catalog/g/gK-09421/">AE-BME280</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal-config" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+            <h2 class="uk-modal-title">Config</h2>
+            <p>未実装</p>
+            <label><input class="uk-checkbox" type="checkbox" checked disabled> データ更新時にアニメーションをする</label>
+            <p class="uk-text-right">
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                <button class="uk-button uk-button-primary" type="button">Save</button>
+            </p>
+            </div>
+    </div>
+    <script src="https://typesquare.com/accessor/script/typesquare.js?Qb5eS1S32fI%3D"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.27/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="script.js"></script>
+    <script>$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');</script>
+  </body>
+</html>
